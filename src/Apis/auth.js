@@ -32,7 +32,7 @@ export const userSignUp = async (data) => {
 
 export const getOtp = async (formData) => {
   try {
-    const otp = await  axios.post(`${apiUrl}/getotp` , formData , { withCredentials: true });
+    const otp = await  axios.post(`${apiUrl}/getotp` , formData , { credentials: "include" });
     return otp;
   } catch (error) {
     console.log(error, "Get Otp Error");
